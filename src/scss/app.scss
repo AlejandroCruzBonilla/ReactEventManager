@@ -1,0 +1,13 @@
+a{
+	text-decoration: none;
+}
+
+.nav__link {
+	color: inherit;
+	&:hover{
+		font-weight: 600;
+	}
+	&--active{
+		font-weight: 600;
+	}
+}
