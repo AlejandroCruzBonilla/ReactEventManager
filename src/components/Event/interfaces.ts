@@ -5,5 +5,4 @@ export interface EventProps {
   hour: string;
   description: string;
   location: string;
-  onDeleteEvent: (id:string) => void;
 }

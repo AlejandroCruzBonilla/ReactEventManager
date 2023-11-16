@@ -1,8 +1,15 @@
+import { FC } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { v4 as uuidV4 } from 'uuid';
-import { FC } from 'react';
-import { FormEventProps } from './interfaces';
+
+//useContext
+// import { useContext } from 'react';
+// import { EventsContext } from '@/context';
+
+// Redux
+import { useDispatch } from 'react-redux';
+import { handlerAddEvent } from '@/store/slices';
 
 const SignUpSchema = Yup.object().shape({
   name: Yup.string().required('The name is Required'),
@@ -20,7 +27,13 @@ const SignUpSchema = Yup.object().shape({
   location: Yup.string(),
 });
 
-export const FormEvent: FC<FormEventProps> = ({ onSubmitEvent }) => {
+export const FormEvent: FC = () => {
+  //UseContext
+  // const { handlerAddEvent } = useContext(EventsContext);
+
+  // Redux
+  const dispatch = useDispatch();
+
   return (
     <Formik
       initialValues={{
@@ -40,7 +53,13 @@ export const FormEvent: FC<FormEventProps> = ({ onSubmitEvent }) => {
           location,
           description,
         };
-        onSubmitEvent(event);
+				//useContext
+        // handlerAddEvent(event);
+
+				//redux
+        dispatch(handlerAddEvent(event));
+
+
         actions.resetForm();
       }}
     >

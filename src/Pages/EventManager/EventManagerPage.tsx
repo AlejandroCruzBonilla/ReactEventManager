@@ -1,16 +1,25 @@
-import { useContext, useState } from 'react';
+import {  useState } from 'react';
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import { Modal, FormEvent, Event } from '@/components';
-import { EventsContext } from '@/context';
+
+// useContext
+// import {useContext} from 'react';
+// import { EventsContext } from '@/context';
+
+import { RootState } from '@/store';
+import { useSelector } from 'react-redux';
 
 const EventManagerPage = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const { events, handlerAddEvent, handlerDeleteEvent } =
-    useContext(EventsContext);
+	// useContext
+  // const { events } = useContext(EventsContext);
+
+	//redux
+  const events = useSelector((state: RootState) => state.events);
 
   return (
     <>
@@ -26,7 +35,6 @@ const EventManagerPage = () => {
             date={date}
             hour={hour}
             location={location}
-            onDeleteEvent={handlerDeleteEvent}
           />
         ))}
       </div>
@@ -39,7 +47,7 @@ const EventManagerPage = () => {
         <AddIcon />
       </Fab>
       <Modal handleClose={handleClose} open={open}>
-        <FormEvent onSubmitEvent={handlerAddEvent} />
+        <FormEvent />
       </Modal>
     </>
   );
