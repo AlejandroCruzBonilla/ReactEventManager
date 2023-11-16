@@ -26,7 +26,7 @@ const EventManagerPage = () => {
       <h1>Events</h1>
 
       <div className='events'>
-        {events.map(({ id, name, description, date, hour, location }) => (
+        {events.map(({ id, name, description, date, hour }) => (
           <Event
             key={id}
             id={id}
@@ -34,7 +34,6 @@ const EventManagerPage = () => {
             description={description}
             date={date}
             hour={hour}
-            location={location}
           />
         ))}
       </div>

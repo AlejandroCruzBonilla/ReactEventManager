@@ -7,7 +7,6 @@ export interface Event {
   date: string;
   description: string;
   hour: string;
-  location: string;
 }
 
 const initEvents = () => {

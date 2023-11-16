@@ -44,13 +44,12 @@ export const FormEvent: FC = () => {
         location: '',
       }}
       validationSchema={SignUpSchema}
-      onSubmit={({ name, description, date, hour, location }, actions) => {
+      onSubmit={({ name, description, date, hour }, actions) => {
         const event = {
           id: uuidV4(),
           name,
           date,
           hour,
-          location,
           description,
         };
 				//useContext
@@ -121,16 +120,6 @@ export const FormEvent: FC = () => {
               />
               {errors.description && touched.description ? (
                 <div className='form__error'>{errors.description}</div>
-              ) : null}
-            </div>
-
-            <div className='form__input-wrapper'>
-              <label className='form__label' htmlFor='location'>
-                Location:
-              </label>
-              <Field className='form__input' name='location' id='location' />
-              {errors.location && touched.location ? (
-                <div className='form__error'>{errors.location}</div>
               ) : null}
             </div>
 

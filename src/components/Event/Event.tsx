@@ -17,7 +17,6 @@ export const Event: FC<EventProps> = ({
   date,
   hour,
   description,
-  location,
 }) => {
   // useContext
   // const { handlerDeleteEvent } = useContext(EventsContext);
@@ -27,18 +26,12 @@ export const Event: FC<EventProps> = ({
 
   return (
     <div className='event'>
-      <div className='event__header'>
-        <div className='event__location'>{location}</div>
-      </div>
-      <div className='event__body'>
-        <h2 className='event__name'>{name}</h2>
-        <div className='event__time'>
-          <div className='event__date'>{date}</div>
-          <div className='event__hour'>{hour}</div>
-        </div>
-
-        <p className='event__description'>{description}</p>
-      </div>
+			<h2 className='event__name'>{name}</h2>
+			<div className='event__time'>
+				<div className='event__date'>{date}</div>
+				<div className='event__hour'>{hour}</div>
+			</div>
+			<p className='event__description'>{description}</p>
       <div className='event__actions'>
         <Button
 					//useContext

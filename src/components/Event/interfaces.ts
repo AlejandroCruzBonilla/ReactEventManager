@@ -4,5 +4,4 @@ export interface EventProps {
   date: string;
   hour: string;
   description: string;
-  location: string;
 }
