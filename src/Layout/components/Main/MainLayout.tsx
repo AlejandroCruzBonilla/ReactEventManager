@@ -8,8 +8,8 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
       <header>
         <NavBar />
       </header>
-      <main className='container'>
-        <div className='p-6'>{children}</div>
+      <main className='main'>
+        <div className='main__wrapper'>{children}</div>
       </main>
     </>
   );

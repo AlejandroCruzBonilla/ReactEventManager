@@ -1,13 +1,139 @@
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
 
+//Nav Link
 .nav__link {
-	color: inherit;
-	&:hover{
+  color: inherit;
+  &:hover {
+    font-weight: 600;
+  }
+  &--active {
+    font-weight: 600;
+		color: rgb(166, 211, 98);
+		font-size: 1.2rem;
+  }
+}
+
+
+//Main
+.main {
+	&__wrapper {
+		padding: 1rem;
+	}
+}
+
+
+//Form Modal
+.modal-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+
+//Form
+
+.form {
+  margin-inline: auto;
+
+  &__fieldset {
+    padding: 1rem;
+    margin: 1rem;
+    display: grid;
+    row-gap: 0.6rem;
+    border-radius: 5px;
+    border-width: 1.5px;
+  }
+
+  &__legend {
+    padding: 0 1rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__input-wrapper {
+    display: grid;
+    grid-template-columns: 100px minmax(200px, 1fr);
+    column-gap: 0.4rem;
+    align-items: center;
+  }
+
+  &__error {
+    margin: 0.1rem;
+    grid-column: 2/3;
+    color: red;
+  }
+
+  &__input,
+  &__label {
+    display: inline;
+  }
+	
+  &__input {
+    padding: 10px;
+    font-family: monospace;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__submit {
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    border-width: 0;
+    color: white;
+    background-color: #1976d2;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: monospace;
+  }
+
+  &__submit:hover {
+    background-color: darken($color: #1976d2, $amount: 10);
+  }
+}
+
+
+
+//Events
+
+.events {
+	display: grid;
+	row-gap: 1rem;
+}
+
+.event {
+	background-color: darken($color: #1976d2, $amount: 10);
+	color: white;
+	border-radius: 15px;
+	padding: 2rem;
+	font-size: 2rem;
+
+	&__name{
+		margin: 0;
 		font-weight: 600;
 	}
-	&--active{
+
+	&__time{
+		display: flex;
+		gap: 1rem;
 		font-weight: 600;
+	}
+
+	&__description{
+		margin: 10px 0;
+	}
+	&__actions{
+		margin-top: 1rem;
 	}
 }

@@ -4,15 +4,18 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './scss/app.scss';
 import { AppRouter } from './router/AppRouter.tsx';
+import { EventsProvider } from '@/context';
 import { MainLayout } from '@/Layout';
 import { CssBaseline } from '@mui/material';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-		<CssBaseline />
+    <CssBaseline />
     <BrowserRouter>
       <MainLayout>
-        <AppRouter />
+        <EventsProvider>
+          <AppRouter />
+        </EventsProvider>
       </MainLayout>
     </BrowserRouter>
   </React.StrictMode>

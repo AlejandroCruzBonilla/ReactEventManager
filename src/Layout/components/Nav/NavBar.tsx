@@ -13,7 +13,7 @@ import { NavLink } from '../NavLink';
 
 const navItems = [
   { to: '/', text: 'Dashboard' },
-  { to: '/events', text: 'Event Manager' },
+  { to: '/events', text: 'Events' },
 ];
 
 const drawerWidth = 240;
@@ -31,6 +31,7 @@ export const NavBar: FC<Props> = ({ window }) => {
   const handleDrawerToggle = () => {
     setMobileOpen(prevState => !prevState);
   };
+	
 
   return (
     <>
