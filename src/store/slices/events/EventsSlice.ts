@@ -9,6 +9,7 @@ export interface Event {
   hour: string;
 }
 
+
 const initEvents = () => {
 	const events = localStorage.getItem('events');
 	if (!events) return [];
